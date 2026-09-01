@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Team Roster Planner</title>
+  <style>
+    :root {
+      --blue: #155eef;
+      --line: #dbe3ef;
+      --bg: #f3f6fb;
+      --text: #172033;
+      --wfo-bg: #dbeafe;
+      --wfo-text: #1d4ed8;
+      --wfh-bg: #dcfce7;
+      --wfh-text: #15803d;
+      --leave-bg: #fee2e2;
+      --leave-text: #b91c1c;
+      --off-bg: #f1f5f9;
+      --off-text: #64748b;
+      --holiday-bg: #fef3c7;
+      --holiday-text: #a16207;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      font-family: Segoe UI, Arial;
+      color: var(--text)
+    }
+
+    header {
+      padding: 22px 28px;
+      color: #fff;
+      background: linear-gradient(135deg, #0f3d91, #155eef)
+    }
+
+    header h1 {
+      margin: 0 0 5px
+    }
+
+    .wrap {
+      padding: 18px;
+      max-width: 1700px;
+      margin: auto
+    }
+
+    .toolbar,
+    .panel,
+    .legend {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: 0 5px 18px #0f172a0d
+    }
+
+    .toolbar {
+      padding: 12px;
+      display: flex;
+      gap: 9px;
+      align-items: end;
+      flex-wrap: wrap;
+      margin-bottom: 12px
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      color: #64748b;
+      margin-bottom: 5px
+    }
+
+    input,
+    select,
+    button {
+      font: inherit;
+      border-radius: 8px
+    }
+
+    input,
+    select {
+      padding: 8px;
+      border: 1px solid #cbd5e1
+    }
+
+    button {
+      padding: 9px 12px;
+      border: 0;
+      background: #e8eef8;
+      font-weight: 700;
+      cursor: pointer
+    }
+
+    button:hover {
+      filter: brightness(.97)
+    }
+
+    button.primary {
+      background: var(--blue);
+      color: #fff
+    }
+
+    button.danger {
+      background: #fee2e2;
+      color: #b91c1c
+    }
+
+    .spacer {
+      flex: 1
+    }
+
+    .banner {
+      padding: 10px 14px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      background: #e0ecff;
+      color: #17428c;
+      font-weight: 700
+    }
+
+    .legend {
+      padding: 10px 12px;
+      margin-bottom: 12px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap
+    }
+
+    .chip {
+      padding: 6px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 800
+    }
+
+    .tablewrap {
+      overflow-x: scroll;
+      overflow-y: auto;
+      width: 100%;
+      max-height: 72vh;
+      scrollbar-gutter: stable;
+    }
+
+    .panel {
+      overflow: hidden
+    }
+
+    table {
+      border-collapse: separate;
+      border-spacing: 0;
+      width: max-content;
+      min-width: 100%;
+      font-size: 12px;
+    }
+
+    th,
+    td {
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 6px;
+      min-width: 82px;
+      height: 42px;
+      text-align: center
+    }
+
+    thead th {
+      position: sticky;
+      top: 0;
+      z-index: 4;
+      background: #eaf0fa
+    }
+
+    .name {
+      position: sticky;
+      left: 0;
+      z-index: 3;
+      background: #fff !important;
+      min-width: 205px;
+      text-align: left;
+      font-weight: 700
+    }
+
+    thead .name {
+      z-index: 6 !important;
+      background: #dfe8f6 !important
+    }
+
+    .weekend {
+      background: #eef2f7 !important
+    }
+
+    .holiday-head {
+      background: #fff1c2 !important
+    }
+
+    .department-row td {
+      background: #dfe8f6 !important;
+      color: #173b73;
+      font-size: 13px;
+      font-weight: 800;
+      text-align: left;
+      height: 38px
+    }
+
+    .department-row .department-name {
+      position: sticky;
+      left: 0;
+      z-index: 3;
+      min-width: 205px
+    }
+
+    .member-name {
+      display: flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    .member-name span {
+      flex: 1
+    }
+
+    .remove-member {
+      padding: 4px 7px;
+      font-size: 10px
+    }
+
+    td select.status {
+      width: 100%;
+      min-width: 105px;
+      padding: 7px 3px;
+      border: 1px solid transparent;
+      font-size: 11px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    td select.status.status-empty {
+      background: #fff;
+      color: #475569
+    }
+
+    td select.status.status-WFO {
+      background: var(--wfo-bg);
+      color: var(--wfo-text)
+    }
+
+    td select.status.status-WFH {
+      background: var(--wfh-bg);
+      color: var(--wfh-text)
+    }
+
+    td select.status.status-Leave {
+      background: var(--leave-bg);
+      color: var(--leave-text)
+    }
+
+    td select.status.status-Weekly-Off {
+      background: var(--off-bg);
+      color: var(--off-text)
+    }
+
+    td select.status.status-Holiday {
+      background: var(--holiday-bg);
+      color: var(--holiday-text)
+    }
+
+    .summary {
+      padding: 12px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--line)
+    }
+
+    .stat {
+      background: #f1f5f9;
+      padding: 8px 11px;
+      border-radius: 8px
+    }
+
+    .stat b {
+      font-size: 16px;
+      margin-left: 4px
+    }
+
+    body.readonly .edit-only {
+      display: none !important
+    }
+
+    body:not(.admin-authenticated) .edit-only {
+      display: none !important
+    }
+
+    body.readonly .admin-login-control {
+      display: none !important
+    }
+
+    body.admin-authenticated .admin-login-control {
+      display: none !important
+    }
+
+    body:not(.admin-authenticated) .admin-logout-control {
+      display: none !important
+    }
+
+    body.readonly td select.status {
+      appearance: none;
+      pointer-events: none;
+      opacity: 1
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: #0f172acc;
+      z-index: 30;
+      padding: 25px;
+      overflow: auto
+    }
+
+    .modal.open {
+      display: block
+    }
+
+    .modal-card {
+      max-width: 620px;
+      margin: auto;
+      background: #fff;
+      border-radius: 14px;
+      padding: 20px
+    }
+
+    .form-row {
+      display: flex;
+      gap: 8px;
+      align-items: end;
+      flex-wrap: wrap;
+      margin: 10px 0
+    }
+
+    .form-row>div {
+      flex: 1;
+      min-width: 190px
+    }
+
+    .form-row input,
+    .form-row select {
+      width: 100%
+    }
+
+    .department-item {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px;
+      margin: 10px 0
+    }
+
+    .department-item-header {
+      display: flex;
+      gap: 8px;
+      align-items: center
+    }
+
+    .department-item-header input {
+      flex: 1
+    }
+
+    .member-list {
+      margin: 10px 0 0 18px;
+      color: #475569;
+      font-size: 13px
+    }
+
+    @media print {
+
+      header,
+      .toolbar,
+      .banner,
+      .legend,
+      .edit-only {
+        display: none !important
+      }
+
+      .wrap {
+        padding: 0
+      }
+
+      .tablewrap {
+        overflow: visible;
+        max-height: none
+      }
+
+      thead th,
+      .name,
+      .department-row .department-name {
+        position: static
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 id="title">M2M Team Roster Plan</h1>
+    <div>Department-wise monthly WFH/WFO roster</div>
+  </header>
+
+  <div class="wrap">
+    <div class="banner" id="banner"></div>
+
+    <div class="toolbar">
+      <div><label>Month</label><select id="month" onchange="periodChanged()"></select></div>
+      <div><label>Year</label><input id="year" type="number" min="2026" max="2100" onchange="periodChanged()"
+          style="width:95px"></div>
+      <button class="primary edit-only" onclick="openMonth()">Create / Open Month</button>
+      <div>
+        <label>Filter Department</label>
+        <select id="departmentFilter" onchange="render()"></select>
+      </div>
+      <button class="edit-only" onclick="openDepartmentManager()">Departments & Members</button>
+      <button class="edit-only" onclick="importResourceWorkbook()">Import Resources Excel</button>
+      <button class="edit-only" onclick="openHoliday()">Add Holiday</button>
+      <button class="edit-only" onclick="save()">Save</button>
+      <button class="edit-only" onclick="openChangePassword()">Change Admin Login</button>
+      <span class="spacer"></span>
+      <button class="admin-login-control" onclick="openAdminLogin()">Administrator Login</button>
+      <button class="admin-logout-control danger" onclick="adminLogout()">Administrator Logout</button>
+      <button onclick="window.print()">Print / PDF</button>
+      <button class="primary edit-only" onclick="shareReadonly()">Download Roster JSON</button>
+    </div>
+
+    <div class="legend">
+      <span class="chip" style="background:var(--wfo-bg);color:var(--wfo-text)">WFO</span>
+      <span class="chip" style="background:var(--wfh-bg);color:var(--wfh-text)">WFH</span>
+      <span class="chip" style="background:var(--leave-bg);color:var(--leave-text)">Leave</span>
+      <span class="chip" style="background:var(--off-bg);color:var(--off-text)">Weekly Off</span>
+      <span class="chip" style="background:var(--holiday-bg);color:var(--holiday-text)">Holiday</span>
+    </div>
+
+    <div class="panel">
+      <div class="summary" id="summary"></div>
+      <div class="tablewrap">
+        <table id="table"></table>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="departmentModal">
+    <div class="modal-card">
+      <h2>Departments & Members</h2>
+      <p style="color:#64748b;font-size:13px">Add, rename, or delete departments and members. Deleting a member removes
+        that person from all days in the currently open roster.</p>
+      <div id="departmentManagerList"></div>
+      <button onclick="addDepartmentEditor()">+ Add Department</button>
+      <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:18px">
+        <button onclick="closeModal('departmentModal')">Cancel</button>
+        <button class="primary" onclick="saveDepartmentManager()">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal" id="adminLoginModal">
+    <div class="modal-card" style="max-width:460px">
+      <h2>Administrator Login</h2>
+      <p style="color:#64748b;font-size:13px">Enter the administrator username and password to enable Edit Mode.</p>
+      <div class="form-row">
+        <div><label>Username</label><input id="adminUsername" autocomplete="username"></div>
+      </div>
+      <div class="form-row">
+        <div><label>Password</label><input id="adminPassword" type="password" autocomplete="current-password"></div>
+      </div>
+      <div id="adminLoginError"
+        style="display:none;color:#b91c1c;background:#fee2e2;padding:9px;border-radius:8px;margin-top:8px"></div>
+      <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:18px">
+        <button onclick="closeModal('adminLoginModal')">Cancel</button>
+        <button class="primary" onclick="adminLogin()">Login</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="changePasswordModal">
+    <div class="modal-card" style="max-width:460px">
+      <h2>Change Administrator Credentials</h2>
+      <div class="form-row">
+        <div><label>New username</label><input id="newAdminUsername"></div>
+      </div>
+      <div class="form-row">
+        <div><label>Current password</label><input id="currentAdminPassword" type="password"></div>
+      </div>
+      <div class="form-row">
+        <div><label>New password</label><input id="newAdminPassword" type="password"></div>
+      </div>
+      <div class="form-row">
+        <div><label>Confirm new password</label><input id="confirmAdminPassword" type="password"></div>
+      </div>
+      <div id="changePasswordError"
+        style="display:none;color:#b91c1c;background:#fee2e2;padding:9px;border-radius:8px;margin-top:8px"></div>
+      <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:18px">
+        <button onclick="closeModal('changePasswordModal')">Cancel</button>
+        <button class="primary" onclick="saveAdminCredentials()">Save Credentials</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="holidayModal">
+    <div class="modal-card">
+      <h2>Add or Remove Holiday</h2>
+      <div class="form-row">
+        <div><label>Day</label><input id="holidayDay" type="number" min="1" max="31"></div>
+        <div><label>Holiday name</label><input id="holidayName" placeholder="Leave blank to remove"></div>
+      </div>
+      <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:18px">
+        <button onclick="closeModal('holidayModal')">Cancel</button>
+        <button class="primary" onclick="saveHoliday()">Apply</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+
+</html>

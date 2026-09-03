@@ -1,16 +1,15 @@
 
-const INITIAL_DATA = { "year": 2026, "month": 9, "title": "M2M Team Roster Plan", "departments": [{ "name": "Digital Platforms", "members": ["Saddam Akhtar", "Vishal Jha", "Mohit Mishra", "Nitish Sharma", "Vishal Gayasen", "Manoj Ojha", "Anoop S Chatra", "Sai Rama Koundinya Adiraju", "Harshit Agarwal", "Abhishek Jindal", "Yarrapureddy Venkat Vaishal Reddy", "Rajesh Rathore", "Korupolu Ashok Kumar", "Subham Singh", "Abhishek Bhardwaj", "Mrinal Kumar", "Flemingstar Syiemlieh", "Ayush Singh"] }, { "name": "Plant & Machine Automation", "members": ["Prasanna K", "Manish Sahu Kumar", "Saurabh Sharma", "Sasikumar Kesavan", "RahulRaju Patil", "Suresh Reddy", "Akshay Kumar Prasad", "Abhishek Mishra", "Kiran A S", "Sagar Kumar Dash"] }, { "name": "M2M Execution", "members": ["Naveen Gudi"] }, { "name": "Configurators", "members": ["Thippa Reddy", "Kumar Jagupilla", "Kalmesh Desar", "Virupaksh Angadi", "Ningappa Gowda", "Vinayak Bajantri", "Kiran S P", "Mohan Kumar", "Ganesh Verma", "Manjunatha Gadugina", "Janakaraj G", "Ranjith Kumar V", "Rohan S Sogalad", "Varun S", "Kalvidharan M", "Raja B", "Venkata Gangadhar Kadali", "Manjunath T", "Shubhashree N", "Ruchita V R", "Kiran Kumar", "Deekshith Gowda", "Anusha K", "Chethan V"] }, { "name": "Standardization", "members": ["Abhishek Shetty", "Akshay Kumar G", "Apoorva Yamanur", "Basavaraj Halagi", "Ashwini T", "Bhavya K R", "Dhanasekar P", "Ankith Y A", "Gokulnath Jegadeesan", "Harish V", "Nandini Hiremath", "Sudarshana R", "Aishwarya S", "Harshitha V S", "Marutesh N", "Prabhu S", "Renuka P", "Manoj Kumar V", "Santhosh Kumar", "Vaishnavi B J", "Vishal R", "Ruchitha S M"] }], "holidays": { "14": "Ganesh Chaturthi" }, "schedule": { "1": { "Prasanna K": "WFO", "Manish Sahu Kumar": "WFO", "Saurabh Sharma": "WFO", "Sasikumar Kesavan": "WFO", "RahulRaju Patil": "WFO", "Suresh Reddy": "WFO", "Akshay Kumar Prasad": "WFO", "Abhishek Mishra": "WFO", "Kiran A S": "WFO", "Sagar Kumar Dash": "WFO" }, "2": { "Prasanna K": "WFO", "Manish Sahu Kumar": "WFO", "Saurabh Sharma": "WFO", "Sasikumar Kesavan": "WFO", "RahulRaju Patil": "WFO", "Suresh Reddy": "WFO", "Akshay Kumar Prasad": "WFO", "Abhishek Mishra": "WFO", "Kiran A S": "WFO", "Sagar Kumar Dash": "WFO" }, "3": { "Prasanna K": "WFO", "Manish Sahu Kumar": "WFH", "Saurabh Sharma": "WFH", "Sasikumar Kesavan": "WFO", "RahulRaju Patil": "WFO", "Suresh Reddy": "WFH", "Akshay Kumar Prasad": "WFO", "Abhishek Mishra": "WFO", "Kiran A S": "WFH", "Sagar Kumar Dash": "WFO" }, "4": { "Prasanna K": "WFO", "Manish Sahu Kumar": "WFO", "Saurabh Sharma": "WFO", "Sasikumar Kesavan": "WFH", "RahulRaju Patil": "WFH", "Suresh Reddy": "WFO", "Akshay Kumar Prasad": "WFO", "Abhishek Mishra": "WFH", "Kiran A S": "WFO", "Sagar Kumar Dash": "WFH" }, "5": { "Prasanna K": "Weekly Off", "Manish Sahu Kumar": "Weekly Off", "Saurabh Sharma": "Weekly Off", "Sasikumar Kesavan": "Weekly Off", "RahulRaju Patil": "Weekly Off", "Suresh Reddy": "Weekly Off", "Akshay Kumar Prasad": "Weekly Off", "Abhishek Mishra": "Weekly Off", "Kiran A S": "Weekly Off", "Sagar Kumar Dash": "Weekly Off" }, "6": { "Prasanna K": "Weekly Off", "Manish Sahu Kumar": "Weekly Off", "Saurabh Sharma": "Weekly Off", "Sasikumar Kesavan": "Weekly Off", "RahulRaju Patil": "Weekly Off", "Suresh Reddy": "Weekly Off", "Akshay Kumar Prasad": "Weekly Off", "Abhishek Mishra": "Weekly Off", "Kiran A S": "Weekly Off", "Sagar Kumar Dash": "Weekly Off" }, "7": { "Prasanna K": "WFO", "Manish Sahu Kumar": "WFO", "Saurabh Sharma": "WFO", "Sasikumar Kesavan": "WFO", "RahulRaju Patil": "WFO", "Suresh Reddy": "WFO", "Akshay Kumar Prasad": "Leave", "Abhishek Mishra": "WFO", "Kiran A S": "WFO", "Sagar Kumar Dash": "WFO" }, "8": { "Prasanna K": "WFO", "Manish Sahu Kumar": "WFO", "Saurabh Sharma": "WFO", "Sasikumar Kesavan": "WFO", "RahulRaju Patil": "WFO", "Suresh Reddy": "WFO", "Akshay Kumar Prasad": "Leave", "Abhishek Mishra": "WFO", "Kiran A S": "WFO", "Sagar Kumar Dash": "WFO" }, "9": { "Prasanna K": "WFO", "Manish Sahu Kumar": "WFO", "Saurabh Sharma": "WFO", "Sasikumar Kesavan": "WFO", "RahulRaju Patil": "WFO", "Suresh Reddy": "WFH", "Akshay Kumar Prasad": "Leave", "Abhishek Mishra": "WFH", "Kiran A S": "WFH", "Sagar Kumar Dash": "WFH" }, "10": { "Prasanna K": "WFO", "Manish Sahu Kumar": "WFO", "Saurabh Sharma": "WFO", "Sasikumar Kesavan": "WFO", "RahulRaju Patil": "WFO", "Suresh Reddy": "WFO", "Akshay Kumar Prasad": "Leave", "Abhishek Mishra": "WFO", "Kiran A S": "WFO", "Sagar Kumar Dash": "WFO" }, "11": { "Prasanna K": "WFO", "Manish Sahu Kumar": "WFO", "Saurabh Sharma": "WFO", "Sasikumar Kesavan": "WFO", "RahulRaju Patil": "WFO", "Suresh Reddy": "WFH", "Akshay Kumar Prasad": "Leave", "Abhishek Mishra": "WFH", "Kiran A S": "WFH", "Sagar Kumar Dash": "WFH" }, "12": { "Prasanna K": "Weekly Off", "Manish Sahu Kumar": "Weekly Off", "Saurabh Sharma": "Weekly Off", "Sasikumar Kesavan": "Weekly Off", "RahulRaju Patil": "Weekly Off", "Suresh Reddy": "Weekly Off", "Akshay Kumar Prasad": "Weekly Off", "Abhishek Mishra": "Weekly Off", "Kiran A S": "Weekly Off", "Sagar Kumar Dash": "Weekly Off" }, "13": { "Prasanna K": "Weekly Off", "Manish Sahu Kumar": "Weekly Off", "Saurabh Sharma": "Weekly Off", "Sasikumar Kesavan": "Weekly Off", "RahulRaju Patil": "Weekly Off", "Suresh Reddy": "Weekly Off", "Akshay Kumar Prasad": "Weekly Off", "Abhishek Mishra": "Weekly Off", "Kiran A S": "Weekly Off", "Sagar Kumar Dash": "Weekly Off" }, "14": { "Prasanna K": "Holiday", "Manish Sahu Kumar": "Holiday", "Saurabh Sharma": "Holiday", "Sasikumar Kesavan": "Holiday", "RahulRaju Patil": "Holiday", "Suresh Reddy": "Holiday", "Akshay Kumar Prasad": "Holiday", "Abhishek Mishra": "Holiday", "Kiran A S": "Holiday", "Sagar Kumar Dash": "Holiday" }, "15": { "Prasanna K": "WFO", "Manish Sahu Kumar": "WFO", "Saurabh Sharma": "WFO", "Sasikumar Kesavan": "WFO", "RahulRaju Patil": "Leave", "Suresh Reddy": "WFO", "Akshay Kumar Prasad": "Leave", "Abhishek Mishra": "WFO", "Kiran A S": "WFO", "Sagar Kumar Dash": "WFO" }, "16": { "Prasanna K": "WFH", "Manish Sahu Kumar": "WFH", "Saurabh Sharma": "WFH", "Sasikumar Kesavan": "WFH", "RahulRaju Patil": "WFH", "Suresh Reddy": "WFH", "Akshay Kumar Prasad": "Leave", "Abhishek Mishra": "WFH", "Kiran A S": "WFH", "Sagar Kumar Dash": "WFH" }, "17": { "Prasanna K": "WFH", "Manish Sahu Kumar": "WFH", "Saurabh Sharma": "WFH", "Sasikumar Kesavan": "WFO", "RahulRaju Patil": "WFH", "Suresh Reddy": "WFH", "Akshay Kumar Prasad": "Leave", "Abhishek Mishra": "WFH", "Kiran A S": "WFH", "Sagar Kumar Dash": "WFH" }, "18": { "Prasanna K": "Leave", "Manish Sahu Kumar": "WFO", "Saurabh Sharma": "WFO", "Sasikumar Kesavan": "WFH", "RahulRaju Patil": "Leave", "Suresh Reddy": "WFO", "Akshay Kumar Prasad": "Leave", "Abhishek Mishra": "WFO", "Kiran A S": "WFO", "Sagar Kumar Dash": "WFO" }, "19": { "Prasanna K": "Weekly Off", "Manish Sahu Kumar": "Weekly Off", "Saurabh Sharma": "Weekly Off", "Sasikumar Kesavan": "Weekly Off", "RahulRaju Patil": "Weekly Off", "Suresh Reddy": "Weekly Off", "Akshay Kumar Prasad": "Weekly Off", "Abhishek Mishra": "Weekly Off", "Kiran A S": "Weekly Off", "Sagar Kumar Dash": "Weekly Off" }, "20": { "Prasanna K": "Weekly Off", "Manish Sahu Kumar": "Weekly Off", "Saurabh Sharma": "Weekly Off", "Sasikumar Kesavan": "Weekly Off", "RahulRaju Patil": "Weekly Off", "Suresh Reddy": "Weekly Off", "Akshay Kumar Prasad": "Weekly Off", "Abhishek Mishra": "Weekly Off", "Kiran A S": "Weekly Off", "Sagar Kumar Dash": "Weekly Off" }, "21": { "Prasanna K": "WFH", "Manish Sahu Kumar": "WFH", "Saurabh Sharma": "WFH", "Sasikumar Kesavan": "WFO", "RahulRaju Patil": "WFO", "Suresh Reddy": "WFO", "Akshay Kumar Prasad": "Leave", "Abhishek Mishra": "WFO", "Kiran A S": "WFO", "Sagar Kumar Dash": "WFO" }, "22": { "Prasanna K": "WFO", "Manish Sahu Kumar": "WFO", "Saurabh Sharma": "WFO", "Sasikumar Kesavan": "WFO", "RahulRaju Patil": "WFO", "Suresh Reddy": "WFO", "Akshay Kumar Prasad": "Leave", "Abhishek Mishra": "WFO", "Kiran A S": "WFO", "Sagar Kumar Dash": "WFO" }, "23": { "Prasanna K": "WFO", "Manish Sahu Kumar": "WFH", "Saurabh Sharma": "WFH", "Sasikumar Kesavan": "WFH", "RahulRaju Patil": "WFH", "Suresh Reddy": "WFH", "Akshay Kumar Prasad": "Leave", "Abhishek Mishra": "WFH", "Kiran A S": "WFH", "Sagar Kumar Dash": "WFH" }, "24": { "Prasanna K": "WFO", "Manish Sahu Kumar": "WFO", "Saurabh Sharma": "WFO", "Sasikumar Kesavan": "WFO", "RahulRaju Patil": "WFO", "Suresh Reddy": "WFH", "Akshay Kumar Prasad": "Leave", "Abhishek Mishra": "WFH", "Kiran A S": "WFH", "Sagar Kumar Dash": "WFH" }, "25": { "Prasanna K": "WFO", "Manish Sahu Kumar": "WFO", "Saurabh Sharma": "WFO", "Sasikumar Kesavan": "WFH", "RahulRaju Patil": "WFH", "Suresh Reddy": "WFO", "Akshay Kumar Prasad": "Leave", "Abhishek Mishra": "WFO", "Kiran A S": "WFO", "Sagar Kumar Dash": "WFO" }, "26": { "Prasanna K": "Weekly Off", "Manish Sahu Kumar": "Weekly Off", "Saurabh Sharma": "Weekly Off", "Sasikumar Kesavan": "Weekly Off", "RahulRaju Patil": "Weekly Off", "Suresh Reddy": "Weekly Off", "Akshay Kumar Prasad": "Weekly Off", "Abhishek Mishra": "Weekly Off", "Kiran A S": "Weekly Off", "Sagar Kumar Dash": "Weekly Off" }, "27": { "Prasanna K": "Weekly Off", "Manish Sahu Kumar": "Weekly Off", "Saurabh Sharma": "Weekly Off", "Sasikumar Kesavan": "Weekly Off", "RahulRaju Patil": "Weekly Off", "Suresh Reddy": "Weekly Off", "Akshay Kumar Prasad": "Weekly Off", "Abhishek Mishra": "Weekly Off", "Kiran A S": "Weekly Off", "Sagar Kumar Dash": "Weekly Off" }, "28": { "Prasanna K": "WFO", "Manish Sahu Kumar": "WFO", "Saurabh Sharma": "WFO", "Sasikumar Kesavan": "WFO", "RahulRaju Patil": "WFO", "Suresh Reddy": "WFH", "Akshay Kumar Prasad": "Leave", "Abhishek Mishra": "WFH", "Kiran A S": "WFH", "Sagar Kumar Dash": "WFH" }, "29": { "Prasanna K": "WFO", "Manish Sahu Kumar": "WFO", "Saurabh Sharma": "WFO", "Sasikumar Kesavan": "WFO", "RahulRaju Patil": "WFO", "Suresh Reddy": "WFO", "Akshay Kumar Prasad": "Leave", "Abhishek Mishra": "WFO", "Kiran A S": "WFO", "Sagar Kumar Dash": "WFO" }, "30": { "Prasanna K": "WFO", "Manish Sahu Kumar": "WFH", "Saurabh Sharma": "WFH", "Sasikumar Kesavan": "WFH", "RahulRaju Patil": "WFH", "Suresh Reddy": "WFO", "Akshay Kumar Prasad": "Leave", "Abhishek Mishra": "WFO", "Kiran A S": "WFO", "Sagar Kumar Dash": "WFO" } } };
-const SHARED_READ_ONLY = false;
-const ROSTER_ARCHIVE = {};
-const START_Y = 2026, START_M = 9;
+const TODAY = new Date();
+const START_Y = TODAY.getFullYear(), START_M = TODAY.getMonth() + 1;
+// Earliest selectable month: the oldest saved roster, or the current month when none exist.
+let EARLIEST_Y = START_Y, EARLIEST_M = START_M;
 const STATUSES = ["", "WFO", "WFH", "Leave", "Weekly Off", "Holiday"];
 let data;
 let ADMIN_AUTHENTICATED = false;
-const EXCEL_DEPARTMENTS = [{ "name": "Digital Platforms", "members": ["Saddam Akhtar", "Vishal Jha", "Mohit Mishra", "Nitish Sharma", "Vishal Gayasen", "Manoj Ojha", "Anoop S Chatra", "Sai Rama Koundinya Adiraju", "Harshit Agarwal", "Abhishek Jindal", "Yarrapureddy Venkat Vaishal Reddy", "Rajesh Rathore", "Korupolu Ashok Kumar", "Subham Singh", "Abhishek Bhardwaj", "Mrinal Kumar", "Flemingstar Syiemlieh", "Ayush Singh"] }, { "name": "Plant & Machine Automation", "members": ["Prasanna K", "Manish Sahu Kumar", "Saurabh Sharma", "Sasikumar Kesavan", "RahulRaju Patil", "Suresh Reddy", "Akshay Kumar Prasad", "Abhishek Mishra", "Kiran A S", "Sagar Kumar Dash"] }, { "name": "M2M Execution", "members": ["Naveen Gudi"] }, { "name": "Configurators", "members": ["Thippa Reddy", "Kumar Jagupilla", "Kalmesh Desar", "Virupaksh Angadi", "Ningappa Gowda", "Vinayak Bajantri", "Kiran S P", "Mohan Kumar", "Ganesh Verma", "Manjunatha Gadugina", "Janakaraj G", "Ranjith Kumar V", "Rohan S Sogalad", "Varun S", "Kalvidharan M", "Raja B", "Venkata Gangadhar Kadali", "Manjunath T", "Shubhashree N", "Ruchita V R", "Kiran Kumar", "Deekshith Gowda", "Anusha K", "Chethan V"] }, { "name": "Standardization", "members": ["Abhishek Shetty", "Akshay Kumar G", "Apoorva Yamanur", "Basavaraj Halagi", "Ashwini T", "Bhavya K R", "Dhanasekar P", "Ankith Y A", "Gokulnath Jegadeesan", "Harish V", "Nandini Hiremath", "Sudarshana R", "Aishwarya S", "Harshitha V S", "Marutesh N", "Prabhu S", "Renuka P", "Manoj Kumar V", "Santhosh Kumar", "Vaishnavi B J", "Vishal R", "Ruchitha S M"] }];
+let unsavedChanges = false;
 
 const period = (y, m) => y * 12 + m - 1;
-const startPeriod = () => period(START_Y, START_M);
-const key = (y = data.year, m = data.month) => `roster-${y}-${m}`;
+const startPeriod = () => period(EARLIEST_Y, EARLIEST_M);
 const clone = x => JSON.parse(JSON.stringify(x));
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const statusClass = s => s ? `status-${String(s).replaceAll(" ", "-")}` : "status-empty";
@@ -26,23 +25,20 @@ async function api(url, options = {}) {
     return body;
 }
 function updateAdminState(authenticated) {
-    ADMIN_AUTHENTICATED = !SHARED_READ_ONLY && authenticated;
+    ADMIN_AUTHENTICATED = authenticated;
     document.body.classList.toggle("admin-authenticated", ADMIN_AUTHENTICATED);
-    if (!SHARED_READ_ONLY) {
-        banner.textContent = ADMIN_AUTHENTICATED
-            ? "Administrator Edit Mode enabled."
-            : "Locked mode. Administrator login is required to edit the roster.";
-    }
+    banner.textContent = ADMIN_AUTHENTICATED
+        ? "Administrator Edit Mode enabled."
+        : "Locked mode. Administrator login is required to edit the roster.";
 }
 function requireAdmin() {
-    if (SHARED_READ_ONLY || !ADMIN_AUTHENTICATED) {
-        if (!SHARED_READ_ONLY) openAdminLogin();
+    if (!ADMIN_AUTHENTICATED) {
+        openAdminLogin();
         return false;
     }
     return true;
 }
 function openAdminLogin() {
-    if (SHARED_READ_ONLY) return;
     adminUsername.value = "";
     adminPassword.value = "";
     adminLoginError.style.display = "none";
@@ -118,37 +114,38 @@ function normalizeData(roster) {
 function allMembers(roster = data) {
     return roster.departments.flatMap(d => d.members);
 }
-function populateWeekendDefaults(roster) {
+function defaultStatus(roster, day) {
+    if (roster.holidays?.[day]) return "Holiday";
+    return [0, 6].includes(new Date(roster.year, roster.month - 1, day).getDay()) ? "Weekly Off" : "WFO";
+}
+function populateDefaultStatuses(roster) {
     const days = new Date(roster.year, roster.month, 0).getDate();
     roster.schedule = roster.schedule || {};
     for (let day = 1; day <= days; day++) {
-        const date = new Date(roster.year, roster.month - 1, day);
-        const isWeekend = [0, 6].includes(date.getDay());
-        if (!isWeekend) continue;
         roster.schedule[day] ??= {};
         allMembers(roster).forEach(member => {
             if (!roster.schedule[day][member]) {
-                roster.schedule[day][member] = "Weekly Off";
+                roster.schedule[day][member] = defaultStatus(roster, day);
             }
         });
     }
 }
-function blankPeriodRoster(yearValue, monthValue) {
+function blankPeriodRoster(yearValue, monthValue, departments = data?.departments) {
     const roster = {
         year: yearValue,
         month: monthValue,
-        title: data.title,
-        departments: clone(data.departments),
+        title: "M2M Team Roster Plan",
+        departments: clone(departments || []),
         holidays: {},
         schedule: {}
     };
-    populateWeekendDefaults(roster);
+    populateDefaultStatuses(roster);
     return roster;
 }
 async function loadPeriodRoster(yearValue, monthValue) {
     try {
         const roster = normalizeData(await api(`/api/rosters/${yearValue}/${monthValue}`));
-        populateWeekendDefaults(roster);
+        populateDefaultStatuses(roster);
         return roster;
     } catch (error) {
         if (error.message === "Roster has not been created.") return null;
@@ -171,61 +168,59 @@ function rebuildDepartmentFilter(preferred = "all") {
 }
 function allowedMonths(y) {
     const names = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    return names.map((name, i) => ({ name, month: i + 1 })).filter(x => y > START_Y || x.month >= START_M);
+    return names.map((name, i) => ({ name, month: i + 1 })).filter(x => y > EARLIEST_Y || x.month >= EARLIEST_M);
 }
 function rebuildMonths(preferred) {
-    const y = Math.max(START_Y, +document.getElementById("year").value || START_Y);
+    const y = Math.max(EARLIEST_Y, +document.getElementById("year").value || EARLIEST_Y);
     year.value = y;
     const list = allowedMonths(y);
     month.innerHTML = list.map(x => `<option value="${x.month}">${x.name}</option>`).join("");
     month.value = list.some(x => x.month === preferred) ? preferred : list[0].month;
 }
-function latestVisiblePeriod() {
-    if (!SHARED_READ_ONLY) return period(data.year, data.month);
-    const periods = Object.values(ROSTER_ARCHIVE).map(r => period(+r.year, +r.month)).filter(Number.isFinite);
-    periods.push(period(data.year, data.month));
-    return Math.max(...periods);
+// Falls back to an empty month; departments come only from the uploaded resource file.
+async function openingRoster(yearValue, monthValue) {
+    const saved = await loadPeriodRoster(yearValue, monthValue);
+    if (saved) return saved;
+    const departments = await api("/api/resources/departments").catch(() => []);
+    return blankPeriodRoster(yearValue, monthValue, departments);
+}
+async function applyEarliestSelectableMonth() {
+    const periods = await api("/api/rosters").catch(() => []);
+    const oldest = periods[0];
+    if (oldest && period(oldest.year, oldest.month) < period(EARLIEST_Y, EARLIEST_M)) {
+        EARLIEST_Y = oldest.year;
+        EARLIEST_M = oldest.month;
+    }
+    year.min = EARLIEST_Y;
 }
 async function init() {
-    document.body.classList.toggle("readonly", SHARED_READ_ONLY);
-    if (SHARED_READ_ONLY) data = normalizeData(clone(INITIAL_DATA));
-    else {
-        const session = await api("/api/auth/session").catch(() => ({ authenticated: false }));
-        updateAdminState(session.authenticated);
-        data = await loadPeriodRoster(START_Y, START_M) || normalizeData(clone(INITIAL_DATA));
-    }
-    populateWeekendDefaults(data);
+    const account = await api("/api/auth/me").catch(() => ({ authenticated: false }));
+    updateAdminState(account.authenticated);
+    await applyEarliestSelectableMonth();
+    data = normalizeData(await openingRoster(START_Y, START_M));
+    populateDefaultStatuses(data);
     year.value = data.year;
     rebuildMonths(data.month);
     rebuildDepartmentFilter("all");
     render();
-    if (SHARED_READ_ONLY) protectSource();
 }
 function selected() { return { y: +year.value, m: +month.value } }
-function archived(y, m) {
-    const found = ROSTER_ARCHIVE[`${y}-${m}`] || ((y === data.year && m === data.month) ? data : null);
-    return found ? normalizeData(clone(found)) : null;
-}
 async function periodChanged() {
     const old = +month.value;
     rebuildMonths(old);
-    if (SHARED_READ_ONLY) return render();
     const { y, m } = selected();
-    data = await loadPeriodRoster(y, m) || blankPeriodRoster(y, m);
+    if (unsavedChanges && !confirm("Discard unsaved changes and open another month?")) return;
+    data = normalizeData(await openingRoster(y, m));
+    unsavedChanges = false;
     rebuildDepartmentFilter("all");
     render();
 }
 function render() {
     const { y, m } = selected();
-    const p = period(y, m);
     const days = new Date(y, m, 0).getDate();
-    const futureReadonly = SHARED_READ_ONLY && p > latestVisiblePeriod();
-    let roster = data;
-    if (SHARED_READ_ONLY) {
-        roster = futureReadonly ? null : archived(y, m);
-    }
-    if (roster) populateWeekendDefaults(roster);
-    const allDepartments = roster?.departments || data.departments;
+    const roster = data;
+    populateDefaultStatuses(roster);
+    const allDepartments = roster.departments;
     const selectedDepartment =
         (document.getElementById("departmentFilter")?.value || "all");
     const departments = selectedDepartment === "all"
@@ -233,20 +228,15 @@ function render() {
         : allDepartments.filter((department, index) => String(index) === selectedDepartment);
 
     title.textContent = `M2M Team Roster Plan — ${new Date(y, m - 1).toLocaleString("en", { month: "long" })} ${y}`;
-    banner.textContent = SHARED_READ_ONLY
-        ? (futureReadonly
-            ? "🔒 Read-only: months after the latest shared roster are intentionally blank."
-            : "🔒 Read-only: saved department roster is visible; editing is disabled.")
-        : (ADMIN_AUTHENTICATED
-            ? "Administrator Edit Mode enabled."
-            : "Locked mode. Administrator login is required to edit the roster.");
+    banner.textContent = ADMIN_AUTHENTICATED
+        ? "Administrator Edit Mode enabled."
+        : "Locked mode. Administrator login is required to edit the roster.";
 
     let html = '<thead><tr><th class="name">Department / Member</th>';
     for (let day = 1; day <= days; day++) {
         const dt = new Date(y, m - 1, day);
         const weekday = dt.getDay();
-        const holiday = roster?.holidays?.[day] || "";
-        html += `<th class="${holiday ? "holiday-head" : (weekday === 0 || weekday === 6) ? "weekend" : ""}" title="${esc(holiday)}">
+        const holiday = roster?.holidays?.[day] || "";        html += `<th class="${holiday ? "holiday-head" : (weekday === 0 || weekday === 6) ? "weekend" : ""}" title="${esc(holiday)}">
     <b>${String(day).padStart(2, "0")}</b><br>
     <small>${["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][weekday]}</small>
   </th>`;
@@ -264,13 +254,18 @@ function render() {
 
             for (let day = 1; day <= days; day++) {
                 const value = roster?.schedule?.[day]?.[member] || "";
-                html += `<td><select class="status ${statusClass(value)}" ${(SHARED_READ_ONLY || !ADMIN_AUTHENTICATED) ? "disabled" : ""}
+                html += `<td><select class="status ${statusClass(value)}" ${ADMIN_AUTHENTICATED ? "" : "disabled"}
       onchange='setStatus(${day},${JSON.stringify(member)},this.value,this)'>
       ${STATUSES.map(s => `<option value="${esc(s)}" ${s === value ? "selected" : ""}>${esc(s)}</option>`).join("")}
       </select></td>`;
             }
             html += "</tr>";
         }
+    }
+    if (!departments.some(department => department.members.length)) {
+        html += `<tr><td class="name">—</td><td class="empty-state" colspan="${days}">${ADMIN_AUTHENTICATED
+            ? "No members yet. Use Upload Resource File to load departments and members."
+            : "No members to show. An administrator must upload the resource file."}</td></tr>`;
     }
     table.innerHTML = html + "</tbody>";
     showSummary(roster, departments);
@@ -304,13 +299,14 @@ async function setStatus(day, member, value, select) {
 
     // Always remove every old status colour before applying the selected colour.
     select.className = `status ${statusClass(value)}`;
-    await save(false);
+    unsavedChanges = true;
     render();
 }
 async function save(show = true) {
     if (!requireAdmin()) return;
     try {
         data = normalizeData(await api(`/api/rosters/${data.year}/${data.month}`, { method: "PUT", body: JSON.stringify(data) }));
+        unsavedChanges = false;
         if (show) alert("Roster saved");
         return true;
     } catch (error) {
@@ -324,20 +320,10 @@ async function openMonth() {
     if (period(y, m) < startPeriod()) {
         year.value = START_Y; rebuildMonths(START_M); return;
     }
-    if (!await save(false)) return;
-    const roster = await loadPeriodRoster(y, m);
-    if (roster) data = roster;
-    else {
-        data = blankPeriodRoster(y, m);
-        for (let day = 1; day <= new Date(y, m, 0).getDate(); day++) {
-            data.schedule[day] ??= {};
-            allMembers(data).forEach(member => {
-                if (!data.schedule[day][member]) data.schedule[day][member] = "";
-            });
-        }
-    }
-    populateWeekendDefaults(data);
-    year.value = data.year; rebuildMonths(data.month); rebuildDepartmentFilter("all"); await save(false); render();
+    if (unsavedChanges && !confirm("Discard unsaved changes and open another month?")) return;
+    data = normalizeData(await openingRoster(y, m));
+    unsavedChanges = false;
+    year.value = data.year; rebuildMonths(data.month); rebuildDepartmentFilter("all"); render();
 }
 async function removeMember(departmentName, member) {
     if (!requireAdmin()) return;
@@ -346,7 +332,9 @@ async function removeMember(departmentName, member) {
     if (!department) return;
     department.members = department.members.filter(name => name !== member);
     Object.values(data.schedule).forEach(day => delete day[member]);
-    if (await save(false)) { rebuildDepartmentFilter(departmentFilter.value); render(); }
+    unsavedChanges = true;
+    rebuildDepartmentFilter(departmentFilter.value);
+    render();
 }
 
 function syncDepartmentsToRoster(roster, newDepartments) {
@@ -364,30 +352,11 @@ function syncDepartmentsToRoster(roster, newDepartments) {
         }
         for (const member of nextMembers) {
             if (!(member in roster.schedule[day])) {
-                const date = new Date(roster.year, roster.month - 1, day);
-                const isWeekend = [0, 6].includes(date.getDay());
-                roster.schedule[day][member] = roster.holidays?.[day]
-                    ? "Holiday"
-                    : (isWeekend ? "Weekly Off" : "");
+                roster.schedule[day][member] = defaultStatus(roster, day);
             }
         }
     }
     return roster;
-}
-async function syncDepartmentsToFutureMonths(newDepartments) {
-    syncDepartmentsToRoster(data, newDepartments);
-    try {
-        const periods = await api("/api/rosters");
-        for (const rosterPeriod of periods) {
-            if (period(rosterPeriod.year, rosterPeriod.month) <= period(data.year, data.month)) continue;
-            const roster = await loadPeriodRoster(rosterPeriod.year, rosterPeriod.month);
-            if (!roster) continue;
-            syncDepartmentsToRoster(roster, newDepartments);
-            await api(`/api/rosters/${roster.year}/${roster.month}`, { method: "PUT", body: JSON.stringify(roster) });
-        }
-    } catch (error) {
-        alert(`Department changes were saved only for the current month: ${error.message}`);
-    }
 }
 function openDepartmentManager() {
     if (!requireAdmin()) return;
@@ -395,16 +364,29 @@ function openDepartmentManager() {
     data.departments.forEach(department => addDepartmentEditor(department));
     document.getElementById("departmentModal").classList.add("open");
 }
-async function importResourceWorkbook() {
+function importResourceWorkbook() {
     if (!requireAdmin()) return;
-    if (!confirm("Import departments and members from BBEC_M2M_Resources.xlsx? Existing schedule statuses for retained members will be kept.")) return;
+    resourceFileInput.value = "";
+    resourceFileInput.click();
+}
+async function uploadResourceFile(input) {
+    const file = input.files?.[0];
+    if (!file || !requireAdmin()) return;
+    if (!confirm(`Import departments and members from ${file.name}? Existing schedule statuses for retained members will be kept.`)) return;
     try {
-        const result = await api("/api/resources/import", { method: "POST" });
+        const buffer = new Uint8Array(await file.arrayBuffer());
+        let binary = "";
+        for (const byte of buffer) binary += String.fromCharCode(byte);
+        const result = await api("/api/resources/import", {
+            method: "POST",
+            body: JSON.stringify({ fileName: file.name, fileBase64: btoa(binary) })
+        });
         const { y, m } = selected();
-        data = await loadPeriodRoster(y, m) || data;
+        data = normalizeData(await openingRoster(y, m));
+        unsavedChanges = false;
         rebuildDepartmentFilter("all");
         render();
-        alert(`Imported ${result.members} members in ${result.departments} departments for ${result.updatedPeriods.length} roster month(s).`);
+        alert(`Imported ${result.members} members in ${result.departments} departments. ${result.updatedPeriods.length} saved roster month(s) updated.`);
     } catch (error) {
         alert(error.message);
     }
@@ -445,7 +427,6 @@ function addMemberToEditor(button) {
 }
 async function saveDepartmentManager() {
     if (!requireAdmin()) return;
-    const oldMembers = new Set(allMembers(data));
     const newDepartments = [];
     const globalNames = new Set();
 
@@ -469,8 +450,11 @@ async function saveDepartmentManager() {
         alert("At least one department is required."); return;
     }
 
-    await syncDepartmentsToFutureMonths(newDepartments);
-    if (await save(false)) { closeModal("departmentModal"); rebuildDepartmentFilter("all"); render(); }
+    syncDepartmentsToRoster(data, newDepartments);
+    unsavedChanges = true;
+    closeModal("departmentModal");
+    rebuildDepartmentFilter("all");
+    render();
 }
 function openHoliday() {
     if (!requireAdmin()) return;
@@ -490,7 +474,9 @@ async function saveHoliday() {
     } else {
         delete data.holidays[day];
     }
-    if (await save(false)) { closeModal("holidayModal"); render(); }
+    unsavedChanges = true;
+    closeModal("holidayModal");
+    render();
 }
 function closeModal(id) { document.getElementById(id).classList.remove("open") }
 function shareReadonly() {
@@ -501,15 +487,9 @@ function shareReadonly() {
     link.click();
     URL.revokeObjectURL(link.href);
 }
-function protectSource() {
-    document.addEventListener("contextmenu", event => event.preventDefault());
-    document.addEventListener("keydown", event => {
-        const key = event.key.toLowerCase();
-        if (event.key === "F12" ||
-            (event.ctrlKey && event.shiftKey && ["i", "j", "c"].includes(key)) ||
-            (event.ctrlKey && ["u", "s"].includes(key))) event.preventDefault();
-    });
-}
+window.addEventListener("beforeunload", event => {
+    if (unsavedChanges) event.preventDefault();
+});
 document.addEventListener("keydown", event => {
     if (document.getElementById("adminLoginModal").classList.contains("open") && event.key === "Enter") {
         adminLogin();

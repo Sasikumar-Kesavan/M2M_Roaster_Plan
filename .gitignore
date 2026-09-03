@@ -1,3 +1,4 @@
 node_modules/
 data/
+.env
 BBEC_M2M_Resources.xlsx

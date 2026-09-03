@@ -215,6 +215,12 @@
       min-width: 205px
     }
 
+    .empty-state {
+      text-align: left;
+      color: #64748b;
+      font-weight: 700
+    }
+
     .member-name {
       display: flex;
       align-items: center;
@@ -425,7 +431,9 @@
         <select id="departmentFilter" onchange="render()"></select>
       </div>
       <button class="edit-only" onclick="openDepartmentManager()">Departments & Members</button>
-      <button class="edit-only" onclick="importResourceWorkbook()">Import Resources Excel</button>
+      <button class="edit-only" onclick="importResourceWorkbook()">Upload Resource File</button>
+      <input id="resourceFileInput" type="file" accept=".xlsx,.xls,.csv" style="display:none" title="Resource file"
+        onchange="uploadResourceFile(this)">
       <button class="edit-only" onclick="openHoliday()">Add Holiday</button>
       <button class="edit-only" onclick="save()">Save</button>
       <button class="edit-only" onclick="openChangePassword()">Change Admin Login</button>
